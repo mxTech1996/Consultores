@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main
       style={{
-        backgroundColor: '#DEF8EBFF',
+        backgroundColor: '#F5DEF8FF',
       }}
     >
       <Navbar />
@@ -34,35 +34,29 @@ export default function Home() {
           title={dataSite.subtitle}
           description={dataSite.description}
           srcSecondary={dataSite.image_hero2}
-          withSubView
+          withSubView={false}
           images={[dataSite.image_hero, dataSite.image_hero2]}
           styleTextSecondSection={{
             color: 'black',
           }}
           withShadowText
-          contentThirdSection={
-            <div
-              style={{ zIndex: 2 }}
-              className='flex flex-col px-48'
-              id='know-us'
-            >
-              <Typography.Title
-                level={3}
-                className='font-medium mb-10 text-center text-white'
-              >
-                Know Us
-              </Typography.Title>
-              <Missions
-                textColor='#fff'
-                data={dataSite.info}
-                gridColumns={1}
-                variant='text'
-              />
-            </div>
-          }
         />
       </div>
       <div className='container mx-auto flex flex-col gap-20 my-24'>
+        <div style={{ zIndex: 2 }} className='flex flex-col px-48' id='know-us'>
+          <Typography.Title
+            level={3}
+            className='font-medium mb-10 text-center text-black'
+          >
+            Know Us
+          </Typography.Title>
+          <Missions
+            textColor='#000'
+            data={dataSite.info}
+            gridColumns={1}
+            variant='card'
+          />
+        </div>
         <div className='flex flex-col' id='our-services'>
           <Typography.Title level={3} className='font-medium mb-10 text-center'>
             Our Services
@@ -78,13 +72,13 @@ export default function Home() {
             <ProductSection
               withCategoryFilter={false}
               title='All Courses'
-              gridColumns={4}
+              gridColumns={3}
               variant='grid'
               productItemVariant='vertical'
               onClickImage={(id) => {
                 router.push(`/product/${id}`);
               }}
-              productVersion='2'
+              productVersion='4'
               carouselOptions={{
                 arrowColor: 'black',
                 fade: true,
@@ -112,7 +106,7 @@ export default function Home() {
             }}
             variantItem='card'
             variant='grid'
-            backgroundColor='#CFE5BAFF'
+            backgroundColor='#fff'
             references={dataSite.references}
             gridColumns={3}
             titleAlign='center'
